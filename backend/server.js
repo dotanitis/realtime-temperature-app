@@ -1,12 +1,12 @@
 const express = require('express');
-const {server} = require ('ws');
+const { Server } = require ('ws');
 const {Pool} = require('pg');
 
 const app = express();
 const PORT = 5000;
 const WS_PORT = 5001;
 
-//PostgrSQL connection
+// PostgreSQL connection
 const pool = new Pool({
   host : 'db',
   user : 'user',
@@ -42,4 +42,4 @@ setInterval(async() => {
   });
 }, 1000);
 
-app.listen(PORT, ()=> console.log('HTTP Server on port ${PORT}'));
+app.listen(PORT, ()=> console.log(`HTTP Server on port ${PORT}`));

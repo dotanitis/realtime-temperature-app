@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:5001');
+    const ws = new WebSocket('ws://backend:5001');
 
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data);
