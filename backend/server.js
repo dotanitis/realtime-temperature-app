@@ -11,7 +11,7 @@ const pool = new Pool({
   host : 'db',
   user : 'user',
   password : 'password',
-  database : 'temperature',
+  database : 'temperatures',
   port : 5432
 });
 
