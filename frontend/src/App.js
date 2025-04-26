@@ -6,7 +6,15 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://backend:5001');
+    const ws = new WebSocket('ws://localhost:5001');
+
+    ws.onopen = () => {
+      console.log('✅ WebSocket Connected');
+    };
+
+    ws.onclose = () => {
+      console.log('❌ WebSocket Disconnected');
+    };
 
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data);

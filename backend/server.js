@@ -21,6 +21,10 @@ app.get('/', (req, res) =>{
 
 const wsServer = new Server({port : WS_PORT});
 
+wsServer.on('listening', () => {
+  console.log(`Websocket server start on port ${WS_PORT}`);
+});
+
 wsServer.on('connection', (socket) => {
   console.log('Client connected');
 });
